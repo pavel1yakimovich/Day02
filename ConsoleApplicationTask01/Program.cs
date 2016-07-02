@@ -1,6 +1,5 @@
 ﻿using System;
 using Task01;
-using Task02;
 
 namespace ConsoleApplicationTask01
 {
