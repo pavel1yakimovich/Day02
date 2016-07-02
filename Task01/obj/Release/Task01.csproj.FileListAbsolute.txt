@@ -1,0 +1,5 @@
+E:\Trainings EPAM\Day 02\Task01\bin\Release\Task01.dll
+E:\Trainings EPAM\Day 02\Task01\bin\Release\Task01.pdb
+E:\Trainings EPAM\Day 02\Task01\obj\Release\Task01.csprojResolveAssemblyReference.cache
+E:\Trainings EPAM\Day 02\Task01\obj\Release\Task01.dll
+E:\Trainings EPAM\Day 02\Task01\obj\Release\Task01.pdb
