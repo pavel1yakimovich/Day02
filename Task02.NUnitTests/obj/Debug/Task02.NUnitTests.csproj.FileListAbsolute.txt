@@ -1,0 +1,9 @@
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\Task02.NUnitTests.dll
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\Task02.NUnitTests.pdb
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\nunit.framework.dll
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\nunit.framework.xml
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\obj\Debug\Task02.NUnitTests.csprojResolveAssemblyReference.cache
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\obj\Debug\Task02.NUnitTests.dll
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\obj\Debug\Task02.NUnitTests.pdb
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\Task02.dll
+E:\Trainings EPAM\Day 02\Task02.NUnitTests\bin\Debug\Task02.pdb
