@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task02
+namespace Task01
 {
     public static class Newthon
     {
@@ -9,11 +9,11 @@ namespace Task02
             double n0 = 0;
             double nk = 1;
 
-            if (A <= 0 && n % 2 != 0)
+            if (A <= 0 && n % 2 == 0)
             {
                 throw new ArithmeticException();
             }
-            if (n == 0)
+            if (n <= 0 || eps <= 0 || eps >= 1)
             {
                 throw new ArithmeticException();
             }
@@ -21,7 +21,7 @@ namespace Task02
             while (Math.Abs(nk - n0) >= eps)
             {
                 n0 = nk;
-                nk = (1 / n)*((n - 1)*n0 + A/Math.Pow(n0, n - 1));
+                nk = (1.0 / n)*((n - 1)*n0 + A/Math.Pow(n0, n - 1));
             }
             return nk;
         }

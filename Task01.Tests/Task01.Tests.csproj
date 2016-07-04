@@ -50,17 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="EuclideanTests.cs" />
+    <Compile Include="NewthonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task02\Task02.csproj">
-      <Project>{2ac6341c-acf9-437f-90b8-7b13c0ff67a9}</Project>
-      <Name>Task02</Name>
-    </ProjectReference>
+    <Content Include="Cases.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cases.xml" />
+    <ProjectReference Include="..\Task01\Task01.csproj">
+      <Project>{e6cdbbfd-dbfe-41e5-8480-9f177d13ed30}</Project>
+      <Name>Task01</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
