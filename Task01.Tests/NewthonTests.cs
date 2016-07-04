@@ -8,7 +8,7 @@ namespace Task01.Tests
     public class NewthonTests
     {
         [TestMethod]
-        public void Newthon_n26power4eps0_01_return2_2581()
+        public void NewthonMethod_n26power4eps0_01_return2_2581()
         {
             //Arrange
             int n = 4;
@@ -23,7 +23,7 @@ namespace Task01.Tests
         }
 
         [TestMethod]
-        public void Newthon_n26_765power3eps0_01_return2_9625()
+        public void NewthonMethod_n26_765power3eps0_01_return2_9625()
         {
             //Arrange
             int n = 3;
@@ -39,7 +39,7 @@ namespace Task01.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArithmeticException))]
-        public void Newthon_n26_765power4epsMinus0_01_returnArithmeticException()
+        public void NewthonMethod_n26_765power4epsMinus0_01_returnArithmeticException()
         {
             //Arrange
             int n = 4;
@@ -51,7 +51,7 @@ namespace Task01.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArithmeticException))]
-        public void Newthon_n26_765power4eps1_2_returnArithmeticException()
+        public void NewthonMethod_n26_765power4eps1_2_returnArithmeticException()
         {
             //Arrange
             int n = 4;
@@ -63,7 +63,7 @@ namespace Task01.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArithmeticException))]
-        public void Newthon_n26_765powerMinus4eps0_01_returnArithmeticException()
+        public void NewthonMethod_n26_765powerMinus4eps0_01_returnArithmeticException()
         {
             //Arrange
             int n = -4;
@@ -75,7 +75,7 @@ namespace Task01.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArithmeticException))]
-        public void Newthon_nMinus26_765power4eps0_01_returnArithmeticException()
+        public void NewthonMethod_nMinus26_765power4eps0_01_returnArithmeticException()
         {
             //Arrange
             int n = 4;
@@ -86,7 +86,7 @@ namespace Task01.Tests
         }
 
         [TestMethod]
-        public void Newthon_nMinus26_765power3eps0_01_returnMinus2_9913()
+        public void NewthonMethod_nMinus26_765power3eps0_01_returnMinus2_9913()
         {
             //Arrange
             int n = 3;
