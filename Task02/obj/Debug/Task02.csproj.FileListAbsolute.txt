@@ -2,3 +2,4 @@ E:\Trainings EPAM\Day 02\Task02\bin\Debug\Task02.dll
 E:\Trainings EPAM\Day 02\Task02\bin\Debug\Task02.pdb
 E:\Trainings EPAM\Day 02\Task02\obj\Debug\Task02.dll
 E:\Trainings EPAM\Day 02\Task02\obj\Debug\Task02.pdb
+E:\Trainings EPAM\Day 02\Task02\obj\Debug\Task02.csprojResolveAssemblyReference.cache
