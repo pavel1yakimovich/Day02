@@ -6,11 +6,21 @@ namespace Task01.NUnitTests
 {
     public class NewthonNUnitTests
     {
-        [TestCase(0.01, 4, 26.765, 2.2745, Result = true)]
-        public bool NewthonMethod_Test(double eps, int n, double A, double res)
+        [TestCase(0.01, 4, 26.765, 2.2745)]
+        [TestCase(0.01, 3, 26.765, 2.9913)]
+        [TestCase(0.01, 3, -26.765, -2.9913)]
+        public void NewthonMethod_Test(double eps, int n, double A, double res)
         {
-            if (Math.Abs(NewthonMethod(eps, n, A) - res) < eps) return true;
-            else return false;
+            Assert.IsTrue(Math.Abs(res - NewthonMethod(eps, n, A)) < eps);
+        }
+
+        [TestCase(1.2, 3, 26.765)]
+        [TestCase(0.01, -4, 26.765)]
+        [TestCase(0.01, 4, -26.765)]
+        [TestCase(-0.01, 3, -26.765)]
+        public void NewthinMethod_ArithmeticException(double eps, int n, double A)
+        {
+            Assert.Throws<ArithmeticException>(() => NewthonMethod(eps, n, A));
         }
     }
 }
