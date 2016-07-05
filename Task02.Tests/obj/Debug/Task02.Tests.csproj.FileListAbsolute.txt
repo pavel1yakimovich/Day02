@@ -1,0 +1,10 @@
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Cases.xml
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Task02.Tests.dll
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Task02.Tests.pdb
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Task02.dll
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\Task02.pdb
+E:\Trainings EPAM\Day 02\Task02.Tests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+E:\Trainings EPAM\Day 02\Task02.Tests\obj\Debug\Task02.Tests.csprojResolveAssemblyReference.cache
+E:\Trainings EPAM\Day 02\Task02.Tests\obj\Debug\Task02.Tests.dll
+E:\Trainings EPAM\Day 02\Task02.Tests\obj\Debug\Task02.Tests.pdb

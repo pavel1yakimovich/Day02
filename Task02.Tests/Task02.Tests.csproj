@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F98D908B-203A-4893-85BE-7AEC13EB187F}</ProjectGuid>
+    <ProjectGuid>{51874751-DC96-4139-8DAB-494BA56C146E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task01.Tests</RootNamespace>
-    <AssemblyName>Task01.Tests</AssemblyName>
+    <RootNamespace>Task02.Tests</RootNamespace>
+    <AssemblyName>Task02.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,14 +51,22 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="NewthonTests.cs" />
+    <Compile Include="EuclideanTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task01\Task01.csproj">
-      <Project>{e6cdbbfd-dbfe-41e5-8480-9f177d13ed30}</Project>
-      <Name>Task01</Name>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task02\Task02.csproj">
+      <Project>{2ac6341c-acf9-437f-90b8-7b13c0ff67a9}</Project>
+      <Name>Task02</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cases.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

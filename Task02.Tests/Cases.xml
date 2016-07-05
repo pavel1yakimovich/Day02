@@ -84,9 +84,4 @@
     <arg2>-2147483647</arg2>
     <result>1</result>
   </Case>
-  <Case>
-    <arg1>0</arg1>
-    <arg2>0</arg2>
-    <result>ArgumentException</result>
-  </Case>
 </Cases>
