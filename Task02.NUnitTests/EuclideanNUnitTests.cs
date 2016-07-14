@@ -12,39 +12,14 @@ namespace Task02.NUnitTests
         {
             get
             {
-                yield return new TestCaseData(42, 18).Returns(6);
-                yield return new TestCaseData(-42, 18).Returns(6);
-                yield return new TestCaseData(42, -18).Returns(6);
-                yield return new TestCaseData(-42, -18).Returns(6);
-                yield return new TestCaseData(42, 0).Returns(42);
-                yield return new TestCaseData(-42, 0).Returns(42);
-                yield return new TestCaseData(42, 1).Returns(1);
-                yield return new TestCaseData(-42, 1).Returns(1);
-                yield return new TestCaseData(42, -1).Returns(1);
-                yield return new TestCaseData(-42, -1).Returns(1);
-                yield return new TestCaseData(42, 42).Returns(42);
-                yield return new TestCaseData(-42, 42).Returns(42);
-                yield return new TestCaseData(-42, -42).Returns(42);
-                yield return new TestCaseData(42, 2147483647).Returns(1);
-                yield return new TestCaseData(-42, 2147483647).Returns(1);
-                yield return new TestCaseData(42, -2147483647).Returns(1);
-                yield return new TestCaseData(-42, -2147483647).Returns(1);
-                yield return new TestCaseData(18, 42).Returns(6);
-                yield return new TestCaseData(18, -42).Returns(6);
-                yield return new TestCaseData(-18, 42).Returns(6);
-                yield return new TestCaseData(-18, -42).Returns(6);
-                yield return new TestCaseData(0, 42).Returns(42);
-                yield return new TestCaseData(0, -42).Returns(42);
-                yield return new TestCaseData(1, 42).Returns(1);
-                yield return new TestCaseData(1, -42).Returns(1);
-                yield return new TestCaseData(-1, 42).Returns(1);
-                yield return new TestCaseData(-1, -42).Returns(1);
-                yield return new TestCaseData(42, -42).Returns(42);
-                yield return new TestCaseData(2147483647, 42).Returns(1);
-                yield return new TestCaseData(2147483647, -42).Returns(1);
-                yield return new TestCaseData(-2147483647, 42).Returns(1);
-                yield return new TestCaseData(-2147483647, -42).Returns(1);
-                yield return new TestCaseData(0, 0).Throws(typeof(ArgumentException));
+                yield return new TestCaseData(42, 18, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(6);
+                yield return new TestCaseData(-42, 18, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(6);
+                yield return new TestCaseData(42, 42, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(42);
+                yield return new TestCaseData(42, 2147483647, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(1);
+                yield return new TestCaseData(-42, 2147483647, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Returns(1);
+                yield return new TestCaseData(42, -42, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Returns(42);
+                yield return new TestCaseData(2147483647, 42, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Returns(1);
+                yield return new TestCaseData(0, 0, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Throws(typeof(ArgumentException));
             }
         }
 
@@ -52,53 +27,40 @@ namespace Task02.NUnitTests
         {
             get
             {
-                yield return new TestCaseData(42, 18, 6).Returns(6);
-                yield return new TestCaseData(42, 0, 6).Returns(6);
-                yield return new TestCaseData(42, -42, 42).Returns(42);
-                yield return new TestCaseData(42, 2147483647, 1).Returns(1);
+                yield return new TestCaseData(42, 18, 6, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(6);
+                yield return new TestCaseData(42, 0, 6, new TypeOfAlgorithmDelegate(EuclideanAlgorithm)).Returns(6);
+                yield return new TestCaseData(42, -42, 42, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Returns(42);
+                yield return new TestCaseData(42, 2147483647, 1, new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm)).Returns(1);
+            }
+        }
+
+        public IEnumerable<TestCaseData> TestDataMoreArgs
+        {
+            get
+            {
+                yield return new TestCaseData(new TypeOfAlgorithmDelegate(EuclideanAlgorithm), 42, 18, 6, 2).Returns(2);
+                yield return new TestCaseData(new TypeOfAlgorithmDelegate(EuclideanAlgorithm), 42, 0, 6, 0, 2).Returns(2);
+                yield return new TestCaseData(new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm), 42, -42, 42, 0, 21, 126).Returns(21);
+                yield return new TestCaseData(new TypeOfAlgorithmDelegate(BinaryEuclideanAlgorithm), 42, 2147483647, 1, 0, 245, -677).Returns(1);
             }
         }
 
         [Test, TestCaseSource(nameof(TestData))]
-        public int EuclideanAlgorithhm_2ArgsWithYield(int a, int b)
+        public int GCD_2ArgsWithYield(int a, int b, TypeOfAlgorithmDelegate algorithmDelegate)
         {
-            return EuclideanAlgorithm(a, b);
-        }
-
-        [Test, TestCaseSource(nameof(TestData))]
-        public int GCD_2ArgsWithYield(int a, int b)
-        {
-            return GCD(a, b);
+            return GCD(a, b, algorithmDelegate);
         }
 
         [Test, TestCaseSource(nameof(TestData3Args))]
-        public int EuclideanAlgorithhm_3ArgsWithYield(int a, int b, int c)
+        public int GCD_3ArgsWithYield(int a, int b, int c, TypeOfAlgorithmDelegate algorithmDelegate)
         {
-            return EuclideanAlgorithm(a, b, c);
+            return GCD(a, b, c, algorithmDelegate);
         }
 
-        [Test, TestCaseSource(nameof(TestData3Args))]
-        public int GCD_3ArgsWithYield(int a, int b, int c)
+        [Test, TestCaseSource(nameof(TestDataMoreArgs))]
+        public int GCD_MoreArgsWithYield(TypeOfAlgorithmDelegate algorithmDelegate, params int[] a)
         {
-            return GCD(a, b, c);
-        }
-
-        [TestCase(42, 18, 6, 2, Result = 2)]
-        [TestCase(42, 0, 6, 0, 2, Result = 2)]
-        [TestCase(42, -42, 42, 0, 21, 126, Result = 21)]
-        [TestCase(42, 2147483647, 1, 0, 245, -677, Result = 1)]
-        public int EuclideanAlgorithm_MoreArgsWithYield(params int[] a)
-        {
-            return EuclideanAlgorithm(a);
-        }
-
-        [TestCase(42, 18, 6, 2, Result = 2)]
-        [TestCase(42, 0, 6, 0, 2, Result = 2)]
-        [TestCase(42, -42, 42, 0, 21, 126, Result = 21)]
-        [TestCase(42, 2147483647, 1, 0, 245, -677, Result = 1)]
-        public int GCD_MoreArgsWithYield(params int[] a)
-        {
-            return GCD(a);
+            return GCD(algorithmDelegate, a);
         }
     }
 }
